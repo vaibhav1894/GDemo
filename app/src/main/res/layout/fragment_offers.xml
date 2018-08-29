@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorDarkGrey"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.OffersFragment"
+    android:orientation="vertical">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:gravity="center_vertical"
+        android:background="@color/colorPrimary"
+        android:paddingLeft="16dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/toolbar_left"
+            android:layout_alignParentLeft="true"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/ic_menu_" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_toLeftOf="@id/toolbar_right"
+            android:layout_toRightOf="@+id/toolbar_left"
+            android:layout_toEndOf="@+id/toolbar_left"
+            android:layout_toStartOf="@id/toolbar_right"
+            android:layout_margin="5dp"
+            android:id="@+id/fragment_home_search_linearlayout"
+            android:gravity="center">
+
+            <com.gdemo.customtext.CustomTextView
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:textSize="@dimen/size_16"
+                android:hint="Offers"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:id="@+id/fragment_home_search_img"
+                android:textColorHint="@color/colorWhite" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/toolbar_right"
+            android:orientation="horizontal"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="16dp"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/ic_magnifying_glass_white"
+                android:id="@+id/fragment_home_img_filter"
+                android:layout_alignParentLeft="true"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:src="@drawable/o"
+        android:scaleType="fitXY"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="3dp"
+            app:cardCornerRadius="3dp"
+            android:layout_margin="5dp"
+            android:backgroundTint="@color/colorWhite">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <com.gdemo.customtext.CustomTextViewBold
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Chatpata Offers"
+                    android:gravity="center"
+                    android:background="@color/colorLightGrey"
+                    android:padding="5dp"
+                    android:textColor="@color/colorBlack"/>
+
+                <android.support.v7.widget.CardView
+                    app:cardCornerRadius="3dp"
+                    android:backgroundTint="@color/colorWhite"
+                    android:elevation="3dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1dp">
+                    <include layout="@layout/include_offer_item"/>
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    app:cardCornerRadius="3dp"
+                    android:backgroundTint="@color/colorWhite"
+                    android:elevation="3dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1dp">
+                    <include layout="@layout/include_offer_item"/>
+                </android.support.v7.widget.CardView>
+                <android.support.v7.widget.CardView
+                    app:cardCornerRadius="3dp"
+                    android:backgroundTint="@color/colorWhite"
+                    android:elevation="3dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1dp">
+                    <include layout="@layout/include_offer_item"/>
+                </android.support.v7.widget.CardView>
+
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+    </ScrollView>
+</LinearLayout>

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/colorDarkGrey"
+    tools:context=".fragments.BasketFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:gravity="center_vertical"
+        android:background="@color/colorPrimary"
+        android:paddingLeft="16dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/toolbar_left"
+            android:layout_alignParentLeft="true"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/ic_menu_" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_toLeftOf="@id/toolbar_right"
+            android:layout_toRightOf="@+id/toolbar_left"
+            android:layout_toEndOf="@+id/toolbar_left"
+            android:layout_toStartOf="@id/toolbar_right"
+            android:layout_margin="5dp"
+            android:id="@+id/fragment_home_search_linearlayout"
+            android:gravity="center">
+
+            <com.gdemo.customtext.CustomTextView
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:textSize="@dimen/size_16"
+                android:hint="Review Basket"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:id="@+id/fragment_home_search_img"
+                android:textColorHint="@color/colorWhite" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/toolbar_right"
+            android:orientation="horizontal"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="16dp"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/ic_magnifying_glass_white"
+                android:id="@+id/fragment_home_img_filter"
+                android:layout_alignParentLeft="true"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <ImageView
+            android:layout_marginTop="60dp"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            app:srcCompat="@drawable/ic_cart"
+            android:layout_gravity="center"/>
+
+        <com.gdemo.customtext.CustomTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="There are no item in your basket."
+            android:layout_marginTop="10dp"
+            android:gravity="center"/>
+
+
+        <com.gdemo.customtext.CustomTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Enjoy great shopping experience with us!."
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:paddingTop="10dp"
+            android:textColor="@color/colorBlack"/>
+
+        <com.gdemo.customtext.CustomTextViewBold
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Start shopping"
+            android:textAllCaps="true"
+            android:padding="10dp"
+            android:layout_margin="30dp"
+            android:layout_gravity="center"
+            android:textColor="@color/colorWhite"
+            android:background="@drawable/shape_btn_re"/>
+
+    </LinearLayout>
+
+</LinearLayout>
