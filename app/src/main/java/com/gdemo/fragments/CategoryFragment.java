@@ -12,12 +12,13 @@ import android.view.ViewGroup;
 
 import com.gdemo.R;
 import com.gdemo.adapter.AdapterCategory;
+import com.gdemo.utils.AppBase;
 
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class CategoryFragment extends Fragment {
+public class CategoryFragment extends Fragment implements AdapterCategory.Interface_AdapterCategory {
 
 
     public CategoryFragment() {
@@ -44,7 +45,14 @@ public class CategoryFragment extends Fragment {
 
         rv = getView().findViewById(R.id.recycler_view);
         rv.setLayoutManager(new LinearLayoutManager(getContext()));
-        rv.setAdapter(new AdapterCategory());
+        rv.setAdapter(new AdapterCategory(this));
 
+    }
+
+    @Override
+    public void method_AdapterCategory(int position) {
+
+        AppBase.callFragment(new CategoryDetailFragment(), new CategoryDetailFragment().getClass().getName(),
+                getFragmentManager());
     }
 }

@@ -13,16 +13,25 @@ import com.gdemo.R;
  */
 public class AdapterCategory extends RecyclerView.Adapter<AdapterCategory.MyViewHolder> {
 
-    public AdapterCategory() {
+    private Interface_AdapterCategory click;
+
+    public AdapterCategory(Interface_AdapterCategory click) {
+        this.click = click;
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder{
 
         public MyViewHolder(View view) {
             super(view);
+
+            view.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    click.method_AdapterCategory(getAdapterPosition());
+                }
+            });
         }
     }
-
 
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -41,6 +50,7 @@ public class AdapterCategory extends RecyclerView.Adapter<AdapterCategory.MyView
         return 20;
     }
 
-
-
+    public interface Interface_AdapterCategory{
+        public void method_AdapterCategory(int position);
+    }
 }
